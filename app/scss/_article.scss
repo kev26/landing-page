@@ -1,0 +1,64 @@
+.article {
+    background-color: $veryLightGray;
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+
+        @include breakpoint-up(medium) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__item {
+        border-radius: 0.3125rem;
+        overflow: hidden;
+        background-color: $white;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+		transition: all 150ms ease-in-out;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+    }
+
+    &__image {
+        height: 12.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__text {
+        padding: 1.625rem;
+        overflow: hidden;
+    }
+
+    &__author {
+        font-size: 0.625rem;
+        margin-bottom: 0.9375rem;
+        color: $grayishBlue;
+    }
+
+    &__title {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        color: $darkBlue;
+        font-weight: lighter;
+
+        &:hover {
+            color: $limeGreen;
+            transition: color 0.5s;
+        }
+    }
+
+    &__description {
+        font-size: 0.75rem;
+        color: $grayishBlue;
+    }
+}
